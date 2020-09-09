@@ -10,4 +10,5 @@ In this repository, I try to use **Python3** to rewrite **FEM codes** of other p
 
 3. The Matlab codes from  master thesis titled [MATLAB FEM Code - From Elasticity to Plasticity](http://pdfs.semanticscholar.org/b187/ce0bbf1efdd4bcf314de76644765efe5d092.pdf) by Sherif, Feysel Nesru.
 
-![Example](https://github.com/PNMZR/Python3_FEM_Codes_Recomposed_from_Other_Programming_Languages/blob/master/Figure_6.png)
+![Figure 1](https://github.com/PNMZR/Python3_FEM_Codes_Recomposed_from_Other_Programming_Languages/blob/master/Figure_6.png)
+![Figure 2](https://github.com/PNMZR/Python3_FEM_Codes_Recomposed_from_Other_Programming_Languages/blob/master/Figure_7.png)
