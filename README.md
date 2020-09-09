@@ -1,6 +1,6 @@
 # Python3 FEM Codes Recomposed from Other Programming Languages
 
-In this repository, I try to use **Python3** to rewrite **FEM codes** of other programming languages, like Matlab, C++, Fortran, aimming at learning and praticing FEM programming.
+In this repository, I try to use **Python3** to rewrite **FEM codes** of other programming languages, like Matlab, C++, Fortran, aiming at learning and practicing FEM programming.
 
 ## FEM Codes of Other Programming Languages
 
