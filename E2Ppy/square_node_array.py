@@ -1,0 +1,69 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Aug 28 17:24:44 2020
+
+@author: lenovo
+"""
+
+import numpy as np
+import shape_func as sf
+
+def square_node_array(pt1, pt2, pt3, pt4, nnx, nny):
+    """
+    Generates a quadratleral array of nodes between the counterclockwise
+    ordering of nodes pt1 - pt4, given number of elements in x and y direction
+    """
+
+    # get node spacing along u direction
+    xi_pts = np.linspace(-1, 1, nnx)
+
+    # get node spacing along v direction
+    eta_pts = np.linspace(-1, 1, nny)
+
+    x_pts = np.array([pt1[0], pt2[0], pt3[0], pt4[0]])
+    y_pts = np.array([pt1[1], pt2[1], pt3[1], pt4[1]])
+    
+    node = np.zeros((nnx*nny, 2))
+    for r in range(1, nny+1): # 编号从1开始，索引减1
+        eta = eta_pts[r-1]
+        for c in range(1, nnx+1):
+            xi = xi_pts[c-1]
+            # get interpolation basis at xi, eta
+            N, dNdxi = sf.shape_func('Q4', [xi,eta])
+            node[(r-1)*nnx+c-1, :] = np.array([x_pts@N, y_pts@N])
+    return node
+
+# function node = square_node_array(pt1, pt2, pt3, pt4, nnx, nny)
+
+# % Generates a quadratleral array of nodes between the counterclockwise
+# % ordering of nodes pt1 - pt4,given number of elements in x and y direction
+
+
+# if (nargin < 6)
+#     disp('Not enough parameters specified for quare_node_array function')
+# end
+
+# % get node spacing along u direction
+
+# xi_pts = linspace(-1, 1, nnx);
+
+
+# % get node spacing along v direction
+
+# eta_pts = linspace(-1, 1, nny);
+
+
+# x_pts = [pt1(1), pt2(1), pt3(1), pt4(1)];
+# y_pts = [pt1(2), pt2(2), pt3(2), pt4(2)];
+
+# for r = 1 : nny
+#     eta = eta_pts(r);
+#     for c = 1 : nnx
+#         xi = xi_pts(c);
+#         % get interpolation basis at xi, eta
+#         N = shape_func('Q4', [xi,eta]);
+#         N = N(:, 1);
+#         node((r-1)*nnx+c, :) = [x_pts*N, y_pts*N];
+#     end
+# end
+# end
